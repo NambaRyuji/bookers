@@ -1,0 +1,26 @@
+<% if @book.errors.any? %>
+<div id = "error_explanation" >
+ <h2> <%= @book.errors.count %>errors prohibited this book from being saved:</h2>
+  <br>
+ <ul> <% @book.errors.full_messages.each do |message| %>
+   <li> <%= message %> </li>
+  <% end %>
+<ul>  </div>
+<% end %>
+
+<h1>Editing Bookt</h1>
+<%= form_with model:@book,   local: true do |f| %>
+<p>title</p>
+<%= f.text_field :title %>
+<p>body</p>
+<%= f.text_area :body %><br>
+<%= f.submit 'Update Book' %>
+<% end %>
+
+<tr><%= link_to "Show", book_path  %>
+
+    |
+
+<%= link_to "Back", "/books" %>
+
+</tr>

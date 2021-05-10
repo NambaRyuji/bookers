@@ -1,0 +1,12 @@
+<%= flash[:notice] %>
+
+<p>Title:<%= @book.title %></p>
+<p>Body: <%= @book.body %> </p>
+
+<tr><%= link_to "Edit", books_edit_path  %>
+
+    |
+
+<%= link_to "Back", "/books" %>
+
+</tr>
